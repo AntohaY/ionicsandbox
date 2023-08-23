@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { NavigationTabsComponent } from './navigation-tabs/navigation-tabs.component';
 
 @Component({
   selector: 'app-root',
@@ -27,15 +28,21 @@ export class AppComponent {}
     RouterModule.forRoot(
       [
         {
-          path: 'home',
-          loadChildren: () =>
-            import('./home/home.component').then((m) => m.HomeComponentModule),
-        },
-        {
-          path: '',
-          redirectTo: 'home',
-          pathMatch: 'full',
-        },
+            path: '',
+            component: NavigationTabsComponent,
+            children: [
+                {
+									path: '',
+									redirectTo: 'home',
+									pathMatch: 'full',
+                },
+                {
+                  path: 'home',
+                  loadChildren: () =>
+                    import('./home/home.component').then((m) => m.HomeComponentModule),
+                },
+            ]
+        }
       ],
       { preloadingStrategy: PreloadAllModules }
     ),
