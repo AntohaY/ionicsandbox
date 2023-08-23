@@ -1,0 +1,7 @@
+{
+  "name": "ionicsandbox",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
