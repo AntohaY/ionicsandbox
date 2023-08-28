@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { NavigationTabsComponent } from './navigation-tabs/navigation-tabs.component';
+import { TabsComponent } from './shared/ui/tabs/tabs.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +29,7 @@ export class AppComponent {}
       [
         {
             path: '',
-            component: NavigationTabsComponent,
+            component: TabsComponent,
             children: [
                 {
 									path: '',

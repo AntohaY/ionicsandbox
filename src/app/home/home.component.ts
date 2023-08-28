@@ -1,31 +1,38 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgModule, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { CardListComponentModule } from './ui/card-list/card-list.component';
+import { HeaderComponentModule } from '../shared/ui/header/header.component';
 
 @Component({
   selector: 'app-home',
   template: `
-    <ion-header>
-      <ion-toolbar>
-        <ion-title> Home </ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <header [headerTitle]="headerTitle">
+      <ion-badge slot="end">22</ion-badge>
+    </header>
     <ion-content>
+      <card-list></card-list>
     </ion-content>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+
+export class HomeComponent {
+  headerTitle = 'Home';
+}
 
 @NgModule({
   imports: [
+    CardListComponentModule,
+    HeaderComponentModule,
     CommonModule,
     IonicModule,
     RouterModule.forChild([
       {
         path: '',
         component: HomeComponent,
+        children: []
       },
     ]),
   ],

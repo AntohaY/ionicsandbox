@@ -3,7 +3,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
-    selector: 'navigation-tabs',
+    selector: 'tabs',
     template: ` 
     <ion-tabs>
         <ion-tab-bar slot="bottom">
@@ -16,7 +16,7 @@ import { IonicModule } from '@ionic/angular';
     `
 })
 
-export class NavigationTabsComponent implements OnInit {
+export class TabsComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
@@ -27,6 +27,6 @@ export class NavigationTabsComponent implements OnInit {
       CommonModule,
       IonicModule,
     ],
-    declarations: [NavigationTabsComponent],
-  })
-  export class NavigationTabsComponentModule {}
+    declarations: [TabsComponent],
+})
+export class TabsComponentModule {}
